@@ -1,3 +1,4 @@
+/* General Body and HTML Styles */
 body, html {
     margin: 0;
     padding: 0;
@@ -10,6 +11,7 @@ body, html {
     color: #333;
 }
 
+/* Link Styles */
 a {
     text-decoration: none;
     color: inherit;
@@ -50,7 +52,7 @@ a {
     color: #fff;
 }
 
-/* Recipe Container and Boxes */
+/* Recipe Container Styles */
 .recipeContainer {
     max-width: 1200px;
     margin: 100px auto 20px;
@@ -63,6 +65,7 @@ a {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Title and Intro Text Styles */
 .title {
     font-size: 2.5em;
     margin-bottom: 10px;
@@ -75,16 +78,20 @@ a {
     color: #666;
 }
 
+/* Recipe Box Styles */
 .recipeBox {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
     margin-bottom: 20px;
+    padding: 0 20px; /* Adjust padding to match overall layout */
 }
 
+/* Recipe Styles */
 .recipe {
-    max-width: 300px;
+    flex: 1 1 calc(100% - 40px); /* Make recipe boxes responsive with margin included */
+    max-width: 300px; /* Ensure the recipe box has a maximum width */
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -100,6 +107,8 @@ a {
 .recipeImage {
     width: 100%;
     height: auto;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
 }
 
 .recipeContent {
@@ -145,16 +154,16 @@ a {
     font-size: 0.9em;
 }
 
-.linkFaH .link {
+.link {
     color: #ff6f61;
     text-decoration: none;
 }
 
-.linkFaH .link:hover {
+.link:hover {
     text-decoration: underline;
 }
 
-/* Additional Styles */
+/* Background Pattern */
 body::before {
     content: "";
     position: fixed;
@@ -168,50 +177,15 @@ body::before {
     z-index: -1;
 }
 
-.recipeContainer {
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 30px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Recipe Image Styles */
-.recipeImage {
-    width: 100%; /* Ensure the image fills the width of its container */
-    height: auto; /* Maintain the aspect ratio of the image */
-    object-fit: cover; /* Ensures the image covers the entire area without distortion */
-    border-radius: 8px 8px 0 0; /* Keeps the rounded corners for the top of the recipe box */
-}
-
-/* Recipe Container and Boxes */
-.recipeBox {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around; /* Distributes the items with some space around them */
-    gap: 30px; /* Space between each recipe box */
-    margin-bottom: 20px;
-    padding: 0 30px; /* Adds padding on the left and right */
-}
-
-.recipe {
-    flex: 1 1 calc(40% - 30px); /* Makes the recipe boxes responsive and fill half the screen width */
-    max-width: 90%; /* Ensures the box doesn't exceed the available width */
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 10px; /* Margin to ensure there's space between the edges and the image */
-}
-
+/* Responsive Design */
 @media (min-width: 768px) {
     .recipe {
-        flex: 1 1 calc(33% - 40px); /* For larger screens, adjust to three recipes per row */
+        flex: 1 1 calc(50% - 40px); /* Two recipes per row on medium screens */
     }
 }
 
 @media (min-width: 1024px) {
     .recipe {
-        flex: 1 1 calc(25% - 40px); /* For very large screens, adjust to four recipes per row */
+        flex: 1 1 calc(33% - 40px); /* Three recipes per row on large screens */
     }
 }
